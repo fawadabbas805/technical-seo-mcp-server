@@ -1,13 +1,13 @@
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 import requests
 
 # Create the Technical SEO MCP server
-mcp = FastMCP("Technical SEO MCP Server")
+mcp = MCPServer("Technical SEO MCP Server")
 
 
 @mcp.tool()
 def check_status_code(url: str) -> dict:
-    """Check the HTTP status code of a URL."""
+    """Check the HTTP status code and final destination of a URL."""
     try:
         response = requests.get(
             url,
